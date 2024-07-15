@@ -1,0 +1,23 @@
+meta {
+  name: Ajouter un livre
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:8000/api/books
+  body: json
+  auth: none
+}
+
+headers {
+  Content-Type: application/json
+}
+
+body:json {
+  {
+    "title": "The devy",
+    "author": "John Do",
+    "year": "XXXX"
+  }
+}

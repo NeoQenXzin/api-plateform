@@ -6,3 +6,7 @@ help: ## Outputs this help screen
 up: compose.yaml
 	docker compose up -d --wait
 	symfony serve -d
+
+install-software:
+	@which castor >/dev/null 2>&1 || ( curl "https://castor.jolicode.com/install" | bash && sudo  mv /home/gitpod/.local/bin/castor /usr/local/bin/castor )
+	@which symfony >/dev/null 2>&1 || ( curl -sS https://get.symfony.com/cli/installer | bash && sudo mv /home/gitpod/.symfony5/bin/symfony /usr/local/bin/symfony )
