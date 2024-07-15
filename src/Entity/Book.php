@@ -2,17 +2,25 @@
 
 namespace App\Entity;
 
-use ApiPlatform\Metadata\ApiResource;
-use App\Repository\BookRepository;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\BookRepository;
+use ApiPlatform\Metadata\ApiFilter;
+use ApiPlatform\Metadata\ApiProperty;
+use ApiPlatform\Metadata\ApiResource;
+use ApiPlatform\Doctrine\Orm\Filter\OrderFilter;
+use ApiPlatform\Doctrine\Orm\Filter\SearchFilter;
 
 #[ORM\Entity(repositoryClass: BookRepository::class)]
-#[ApiResource]
+#[ApiResource(paginationClientItemsPerPage: true, paginationItemsPerPage: 5)]
+#[ApiFilter(SearchFilter::class, properties: ['title' => 'ipartial'])]
+#[ApiFilter(OrderFilter::class, properties: ['title'])]
+
 class Book
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
+    #[ApiProperty(readable: false)]
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
@@ -22,6 +30,7 @@ class Book
     private ?string $author = null;
 
     #[ORM\Column(length: 4, nullable: true)]
+    #[ApiProperty(writable: false)]
     private ?string $year = null;
 
     public function getId(): ?int

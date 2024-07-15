@@ -1,0 +1,17 @@
+meta {
+  name: tri
+  type: http
+  seq: 6
+}
+
+get {
+  url: http://localhost:8000/api/books?page=1&order[year]=desc&order[title]=asc
+  body: none
+  auth: none
+}
+
+params:query {
+  page: 1
+  order[year]: desc
+  order[title]: asc
+}
