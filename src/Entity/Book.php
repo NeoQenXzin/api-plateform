@@ -9,6 +9,8 @@ use ApiPlatform\Metadata\ApiProperty;
 use ApiPlatform\Metadata\ApiResource;
 use ApiPlatform\Doctrine\Orm\Filter\OrderFilter;
 use ApiPlatform\Doctrine\Orm\Filter\SearchFilter;
+//Ajouter pour les contraintes (not blank, length...)
+use Symfony\Component\Validator\Constraints as Assert;
 
 #[ORM\Entity(repositoryClass: BookRepository::class)]
 #[ApiResource(paginationClientItemsPerPage: true, paginationItemsPerPage: 5)]
@@ -20,15 +22,19 @@ class Book
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    #[ApiProperty(readable: false)]
+    // #[ApiProperty(readable: false)]
     private ?int $id = null;
 
+    #[Assert\NotBlank]
     #[ORM\Column(length: 255)]
     private ?string $title = null;
 
+    #[Assert\NotBlank(message: "L'auteur doit être renseigné")]
+    #[Assert\Length(min: 3, minMessage: "Le nom de l'auteur doit contenir au moins 3 caractères")]
     #[ORM\Column(length: 255)]
     private ?string $author = null;
 
+    #[Assert\Length(exactly: 4)]
     #[ORM\Column(length: 4, nullable: true)]
     #[ApiProperty(writable: false)]
     private ?string $year = null;

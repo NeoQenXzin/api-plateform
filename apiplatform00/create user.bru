@@ -1,0 +1,27 @@
+meta {
+  name: create user
+  type: http
+  seq: 8
+}
+
+put {
+  url: http://localhost:8000/api/books/2
+  body: json
+  auth: bearer
+}
+
+headers {
+  Content-Type: application/json
+}
+
+auth:bearer {
+  token: eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3MjEwNTc3NTgsImV4cCI6MTcyMTE0NDE1OCwicm9sZXMiOlsiUk9MRV9BRE1JTiIsIlJPTEVfVVNFUiJdLCJ1c2VybmFtZSI6ImpvaG5AZG9lLmNvbSJ9.OgSjv_rWVbYaL5LIkvVBOmImXDuPDsD1SnYDJ5si04c75XVeAGpmpmX-a988WmtAwAhUe9XFt5Olf9orPXexwpKqXf8QET9bOOalq8CGeWAt420x253taSe27H2FYSwTKiHHUDElcBiOO9Is4wA5b5Bm56cCRZXxuuwZLU5p7Wk01aB4-GFC-r9DuZRs040N807i7StsOi4Gbhzhw7RKIoYI0cA2Sqs_fF1Hv1odgFqxbA8ZOnJAlTO1BRhbtT-Yi2vbLWqpNNLowoAl1QZfHLBVRR720g0ac73CGwoVSh7EgaqafgQB-U5uTcrn6gyQJGZxnncaFD31xMMd83oR3w
+}
+
+body:json {
+  {
+    "title": "Ma",
+    "author": "J",
+    "year": "ml"
+  }
+}
