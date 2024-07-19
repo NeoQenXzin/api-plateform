@@ -1,4 +1,6 @@
 name: Mon premier workflow
+env:
+  VARIABLE_NAME: George
 on:
   push:
     branches:
@@ -16,6 +18,8 @@ jobs:
         run: mkdir new_directory
       - name: List files
         run: ls -al
+      - name: display variable
+        run: echo ${{ env.VARIABLE_NAME }}
   job2:
       runs-on: windows-latest
       steps:
