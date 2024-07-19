@@ -17,12 +17,12 @@ jobs:
       - name: List files
         run: ls -al
   job2:
-      runs-on: Windows Latest
+      runs-on: windows-latest
       steps:
       - name: refaire un hello world
         uses: actions/hello-world-docker-action@v1
   job3:
-      runs-on: macOS Latest
+      runs-on: macos-latest
       steps:
       - name: refaire un hello world
         uses: actions/hello-world-docker-action@v1
