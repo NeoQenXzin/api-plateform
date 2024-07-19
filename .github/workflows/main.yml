@@ -19,7 +19,7 @@ jobs:
       - name: List files
         run: ls -al
       - name: display variable
-        run: echo ${{ env.George }}
+        run: echo ${{ env.MA_VARIABLE_GEORGE }}
   job2:
       runs-on: windows-latest
       steps:
