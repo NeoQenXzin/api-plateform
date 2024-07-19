@@ -21,9 +21,9 @@ jobs:
       - name: display variable
         run: echo ${{ env.VARIABLE_NAME }}
       - name: display variable repo
-        run: echo ${{ MA_VARIABLE_GEORGE }}
+        run: echo ${{ vars.MA_VARIABLE_GEORGE }}
       - name: display variable secret
-        run: echo ${{ env.secret_variable }}
+        run: echo ${{ secrets.secret_variable }}
        
   job2:
       runs-on: windows-latest
