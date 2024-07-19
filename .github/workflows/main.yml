@@ -7,7 +7,7 @@ on:
     branches:
       - main
 jobs:
-  hello-world:
+  job1:
     runs-on: ubuntu-latest
     steps:
       - name: Exécuter une action
@@ -16,3 +16,8 @@ jobs:
         run: mkdir new_directory
       - name: List files
         run: ls -al
+  job2:
+      runs-on: ubuntu-latest
+      steps:
+      - name: refaire un hello world
+        uses: actions/hello-world-docker-action@v1
