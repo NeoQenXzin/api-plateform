@@ -1,0 +1,14 @@
+name: Mon premier workflow
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+jobs:
+  hello-world:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Exécuter une action
+        uses: actions/hello-world-docker-action@v1
