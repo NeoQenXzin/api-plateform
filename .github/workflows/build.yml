@@ -19,8 +19,8 @@ jobs:
       uses: shivammathur/setup-php@v2
       with:
         php-version: '8.3'
-        extensions: mbstring, pdo_mysql  # Liste les extensions PHP nécessaires
-        tools: composer, phpunit  # Installe Composer et PHPUnit
+        extensions: mbstring, pdo_mysql ,pgsql
+        tools: composer, phpunit 
 
     - name: Install Composer Dependencies
       run: composer install --no-progress --prefer-dist
