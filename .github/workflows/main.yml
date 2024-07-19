@@ -20,7 +20,7 @@ jobs:
       runs-on: windows-latest
       steps:
       - name: List files
-        run: ls -al
+        run: dir
   job3:
       runs-on: macos-latest
       steps:
