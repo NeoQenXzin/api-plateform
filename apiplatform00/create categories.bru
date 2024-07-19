@@ -5,7 +5,7 @@ meta {
 }
 
 post {
-  url: http://localhost:8000/api/users
+  url: http://localhost:8000/api/categories
   body: json
   auth: bearer
 }
@@ -20,8 +20,6 @@ auth:bearer {
 
 body:json {
   {
-    "email": "Mailyui@ty.com",
-    "password": "Jon",
-    "roles": ["user"]
+  "name": "Mystery"
   }
 }

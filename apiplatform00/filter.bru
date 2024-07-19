@@ -5,7 +5,15 @@ meta {
 }
 
 get {
-  url: localhost:8000/api/books?title=
+  url: http://localhost:8000/api/books?title=bou
   body: none
   auth: none
+}
+
+params:query {
+  title: bou
+}
+
+headers {
+  Content-Type: application/json
 }

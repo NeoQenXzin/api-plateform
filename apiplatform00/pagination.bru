@@ -5,7 +5,16 @@ meta {
 }
 
 get {
-  url: "/api/books?itemsPerPage=2&page=1"
+  url: http://localhost:8000/api/books?itemsPerPage=10&page=2
   body: none
   auth: none
+}
+
+params:query {
+  itemsPerPage: 10
+  page: 2
+}
+
+headers {
+  Content-Type: application/json
 }

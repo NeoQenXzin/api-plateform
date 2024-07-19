@@ -4,8 +4,8 @@ meta {
   seq: 8
 }
 
-put {
-  url: http://localhost:8000/api/books/2
+post {
+  url: http://localhost:8000/api/users
   body: json
   auth: bearer
 }
@@ -20,8 +20,8 @@ auth:bearer {
 
 body:json {
   {
-    "title": "Ma",
-    "author": "J",
-    "year": "ml"
+    "email": "Mailyui@ty.com",
+    "password": "Jon",
+    "roles": ["user"]
   }
 }
